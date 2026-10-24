@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheme Mapping & Eligibility System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🇮🇳 SchemeMap</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#checker">Check Eligibility</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="badge">Government Scheme Finder</span>
+
+        <h1>Find Government Schemes<br>
+            <span>You Are Eligible For</span>
+        </h1>
+
+        <p>
+            Check Central and State Government schemes using your
+            personal, educational and financial details.
+        </p>
+
+        <a href="#checker" class="hero-btn">Check Eligibility →</a>
+    </div>
+</section>
+
+<section class="checker-section" id="checker">
+
+    <div class="section-title">
+        <span>ELIGIBILITY CHECKER</span>
+        <h2>Enter Your Details</h2>
+        <p>We'll compare your profile with available government schemes.</p>
+    </div>
+
+    <div class="form-card">
+
+        <form id="schemeForm">
+
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" id="age" min="1" max="100"
+                           placeholder="Enter age" required>
+                </div>
+
+                <div class="input-group">
+                    <label>State</label>
+                    <select id="state" required>
+                        <option value="">Select State</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Other">Other State</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Gender</label>
+                    <select id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Category</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="General">General</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="OBC">OBC</option>
+                        <option value="MBC">MBC</option>
+                        <option value="DNC">DNC</option>
+                        <option value="EWS">EWS</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Education</label>
+                    <select id="education" required>
+                        <option value="">Select Education</option>
+                        <option value="School">School</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="UG">Undergraduate</option>
+                        <option value="PG">Postgraduate</option>
+                        <option value="PhD">PhD</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Annual Family Income</label>
+                    <input type="number" id="income"
+                           placeholder="Example: 200000" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Are you a student?</label>
+                    <select id="student" required>
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Are you a person with disability?</label>
+                    <select id="disability" required>
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Are you a farmer?</label>
+                    <select id="farmer" required>
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit" class="check-btn">
+                🔍 Check All Schemes
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+
+<section class="results-section" id="results">
+
+    <div class="result-header">
+        <div>
+            <span>RESULTS</span>
+            <h2>Scheme Matching Results</h2>
+        </div>
+
+        <div class="result-count">
+            <strong id="eligibleCount">0</strong>
+            <small>Eligible Schemes</small>
+        </div>
+    </div>
+
+    <div class="summary-cards">
+
+        <div class="summary-card eligible-summary">
+            <div>✅</div>
+            <div>
+                <strong id="eligibleNumber">0</strong>
+                <span>Eligible</span>
+            </div>
+        </div>
+
+        <div class="summary-card not-summary">
+            <div>❌</div>
+            <div>
+                <strong id="notEligibleNumber">0</strong>
+                <span>Not Eligible</span>
+            </div>
+        </div>
+
+        <div class="summary-card total-summary">
+            <div>📋</div>
+            <div>
+                <strong id="totalNumber">0</strong>
+                <span>Total Checked</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="resultsContainer" class="results-container"></div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <div class="section-title">
+        <span>ABOUT THE PROJECT</span>
+        <h2>Government Scheme Mapping System</h2>
+    </div>
+
+    <div class="about-grid">
+
+        <div>
+            <h3>🎯 Objective</h3>
+            <p>
+                This system helps citizens identify government schemes
+                that may match their profile without searching through
+                multiple websites manually.
+            </p>
+        </div>
+
+        <div>
+            <h3>🏛️ Scheme Coverage</h3>
+            <p>
+                The prototype supports Central Government and
+                Tamil Nadu State schemes.
+            </p>
+        </div>
+
+        <div>
+            <h3>⚙️ Technology</h3>
+            <p>
+                HTML, CSS and JavaScript are used to build this
+                frontend prototype.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 SchemeMap | Government Scheme Eligibility System</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
